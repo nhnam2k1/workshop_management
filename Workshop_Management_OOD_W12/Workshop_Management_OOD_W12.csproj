@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E7E3478-61EB-4455-801D-BE034E2D739D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Workshop_Management_OOD_W12</RootNamespace>
+    <AssemblyName>Workshop_Management_OOD_W12</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\UsersEnum.cs" />
+    <Compile Include="Class\WorkshopEnum.cs" />
+    <Compile Include="Form\AddWorkshopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AddWorkshopForm.Designer.cs">
+      <DependentUpon>AddWorkshopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AddUserForm.Designer.cs">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Enrollment.cs" />
+    <Compile Include="Class\InBuildingEnrollment.cs" />
+    <Compile Include="Class\InBuildingWorkshop.cs" />
+    <Compile Include="Class\OnlineEnrollment.cs" />
+    <Compile Include="Class\OnlineWorkshop.cs" />
+    <Compile Include="Class\Student.cs" />
+    <Compile Include="Class\Teacher.cs" />
+    <Compile Include="Class\User.cs" />
+    <Compile Include="Class\WarningCapacityHandle.cs" />
+    <Compile Include="Class\Workshop.cs" />
+    <Compile Include="Form\ModifyUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ModifyUsersForm.Designer.cs">
+      <DependentUpon>ModifyUsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ModifyWorkshopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ModifyWorkshopForm.Designer.cs">
+      <DependentUpon>ModifyWorkshopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IObjectComparision.cs" />
+    <Compile Include="UserControl\EnrollmentUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\EnrollmentUC.Designer.cs">
+      <DependentUpon>EnrollmentUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\EnrollmentManager\IEnrollmentManager.cs" />
+    <Compile Include="Interfaces\EnrollmentManager\IEnrollmentManagerCreate.cs" />
+    <Compile Include="Interfaces\EnrollmentManager\IEnrollmentManagerGet.cs" />
+    <Compile Include="Interfaces\EnrollmentManager\IEnrollmentManagerRemove.cs" />
+    <Compile Include="Interfaces\EnrollmentManager\IEnrollmentManagerUpdate.cs" />
+    <Compile Include="Interfaces\IEnrollmentModel.cs" />
+    <Compile Include="Interfaces\IPersistentSerializeStorage.cs" />
+    <Compile Include="Interfaces\IPrintWorkshop.cs" />
+    <Compile Include="Interfaces\IUserModel.cs" />
+    <Compile Include="Interfaces\IWorkshopModel.cs" />
+    <Compile Include="Interfaces\UserManager\IUserManager.cs" />
+    <Compile Include="Interfaces\UserManager\IUserManagerCreate.cs" />
+    <Compile Include="Interfaces\UserManager\IUserManagerGet.cs" />
+    <Compile Include="Interfaces\UserManager\IUserManagerRemove.cs" />
+    <Compile Include="Interfaces\UserManager\IUserManagerUpdate.cs" />
+    <Compile Include="Interfaces\WorkshopManager\IWorkshopManager.cs" />
+    <Compile Include="Interfaces\WorkshopManager\IWorkshopManagerCreate.cs" />
+    <Compile Include="Interfaces\WorkshopManager\IWorkshopManagerGet.cs" />
+    <Compile Include="Interfaces\WorkshopManager\IWorkshopManagerRemove.cs" />
+    <Compile Include="Interfaces\WorkshopManager\IWorkshopManagerUpdate.cs" />
+    <Compile Include="Logic\EnrollmentManager.cs" />
+    <Compile Include="Logic\GeneratingTextFile.cs" />
+    <Compile Include="Logic\InputValidation.cs" />
+    <Compile Include="Logic\UserManager.cs" />
+    <Compile Include="Logic\WorkshopManager.cs" />
+    <Compile Include="Model\EnrollmentModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Model\WorkshopModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl\UserUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserUC.Designer.cs">
+      <DependentUpon>UserUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WorkshopUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\WorkshopUC.Designer.cs">
+      <DependentUpon>WorkshopUC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AddUserForm.resx">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AddWorkshopForm.resx">
+      <DependentUpon>AddWorkshopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ModifyUsersForm.resx">
+      <DependentUpon>ModifyUsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ModifyWorkshopForm.resx">
+      <DependentUpon>ModifyWorkshopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControl\EnrollmentUC.resx">
+      <DependentUpon>EnrollmentUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserUC.resx">
+      <DependentUpon>UserUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\WorkshopUC.resx">
+      <DependentUpon>WorkshopUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
